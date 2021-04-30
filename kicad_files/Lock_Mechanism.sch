@@ -1,0 +1,141 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 6
+Title "Lock Mechanism"
+Date "2021-04-15"
+Rev "v1.0"
+Comp "UW Madison"
+Comment1 "Angelique Stepanenkov-Chen"
+Comment2 "Adam Nygard"
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	5550 3750 5950 3750
+Wire Wire Line
+	5950 3750 5950 3550
+Wire Wire Line
+	5950 3250 5950 3050
+Connection ~ 5950 3750
+$Comp
+L power:GND #PWR0308
+U 1 1 608F445E
+P 5950 4650
+F 0 "#PWR0308" H 5950 4400 50  0001 C CNN
+F 1 "GND" H 5955 4477 50  0000 C CNN
+F 2 "" H 5950 4650 50  0001 C CNN
+F 3 "" H 5950 4650 50  0001 C CNN
+	1    5950 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 4400 5950 4650
+Wire Wire Line
+	5950 4000 5950 3750
+$Comp
+L Transistor_FET:IRF540N Q301
+U 1 1 608BF859
+P 5850 4200
+F 0 "Q301" H 6054 4246 50  0000 L CNN
+F 1 "IRF540N" H 6054 4155 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 6100 4125 50  0001 L CIN
+F 3 "http://www.irf.com/product-info/datasheets/data/irf540n.pdf" H 5850 4200 50  0001 L CNN
+	1    5850 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 3550 5550 3750
+Wire Wire Line
+	5550 3050 5550 3250
+$Comp
+L Diode:1N4007 D301
+U 1 1 6092B912
+P 5550 3400
+F 0 "D301" V 5504 3480 50  0000 L CNN
+F 1 "1N4007" V 5595 3480 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 5550 3225 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 5550 3400 50  0001 C CNN
+	1    5550 3400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5550 3050 5750 3050
+Wire Wire Line
+	5750 3050 5750 2900
+Connection ~ 5750 3050
+Wire Wire Line
+	5750 3050 5950 3050
+$Comp
+L power:+12V #PWR0202
+U 1 1 607DFBAB
+P 5750 2900
+F 0 "#PWR0202" H 5750 2750 50  0001 C CNN
+F 1 "+12V" H 5765 3073 50  0000 C CNN
+F 2 "" H 5750 2900 50  0001 C CNN
+F 3 "" H 5750 2900 50  0001 C CNN
+	1    5750 2900
+	1    0    0    -1  
+$EndComp
+Text Label 5950 3750 0    50   ~ 0
+MTR_CTRL
+$Comp
+L Device:L_Core_Iron L301
+U 1 1 608C5554
+P 5950 3400
+F 0 "L301" H 6038 3446 50  0000 L CNN
+F 1 "181mH" H 6038 3355 50  0000 L CNN
+F 2 "Inductor_SMD:L_Taiyo-Yuden_NR-10050_9.8x10.0mm" H 5950 3400 50  0001 C CNN
+F 3 "~" H 5950 3400 50  0001 C CNN
+	1    5950 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R302
+U 1 1 608F77AB
+P 5400 4200
+F 0 "R302" V 5605 4200 50  0000 C CNN
+F 1 "10K" V 5514 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5440 4190 50  0001 C CNN
+F 3 "~" H 5400 4200 50  0001 C CNN
+	1    5400 4200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_US R301
+U 1 1 608F675F
+P 5150 4500
+F 0 "R301" H 5218 4546 50  0000 L CNN
+F 1 "10K" H 5218 4455 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5190 4490 50  0001 C CNN
+F 3 "~" H 5150 4500 50  0001 C CNN
+	1    5150 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 4200 5150 4350
+Wire Wire Line
+	5250 4200 5150 4200
+$Comp
+L power:GND #PWR0306
+U 1 1 608F8EB6
+P 5150 4650
+F 0 "#PWR0306" H 5150 4400 50  0001 C CNN
+F 1 "GND" H 5155 4477 50  0000 C CNN
+F 2 "" H 5150 4650 50  0001 C CNN
+F 3 "" H 5150 4650 50  0001 C CNN
+	1    5150 4650
+	1    0    0    -1  
+$EndComp
+Text HLabel 5000 4200 0    50   Input ~ 0
+MTR_ON
+Connection ~ 5150 4200
+Wire Wire Line
+	5150 4200 5000 4200
+Wire Wire Line
+	5650 4200 5550 4200
+Text Label 5650 4200 3    50   ~ 0
+MOS_GATE
+$EndSCHEMATC

@@ -1,0 +1,90 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 6
+Title "Smart Lock"
+Date "2021-04-11"
+Rev "v1.0"
+Comp "UW Madison"
+Comment1 "Adam Nygard"
+Comment2 "Cristian Sanchez"
+Comment3 "Angelique Stepanenkov-Chen"
+Comment4 "Jake Wesson"
+$EndDescr
+$Sheet
+S 5250 2850 1300 2300
+U 608BE83F
+F0 "Lock_Mechanism" 50
+F1 "Lock_Mechanism.sch" 50
+F2 "MTR_ON" I L 5250 3150 50 
+$EndSheet
+$Sheet
+S 7200 2850 1300 2300
+U 60987216
+F0 "Light_Sensor" 50
+F1 "Light_Sensor.sch" 50
+F2 "LIGHT_OUT" O L 7200 3150 50 
+$EndSheet
+$Sheet
+S 9150 2850 1300 2300
+U 607E4E4C
+F0 "Power_Supply" 50
+F1 "Power_Supply.sch" 50
+$EndSheet
+Wire Wire Line
+	2650 3600 3300 3600
+Wire Wire Line
+	3300 3800 2650 3800
+$Sheet
+S 1350 2850 1300 2300
+U 60789B98
+F0 "Keypad" 50
+F1 "Keypad.sch" 50
+F2 "KYPD_RW_2" O R 2650 4800 50 
+F3 "KYPD_RW_3" O R 2650 5000 50 
+F4 "KYPD_CL_0" I R 2650 3600 50 
+F5 "KYPD_CL_2" O R 2650 4000 50 
+F6 "KYPD_CL_1" O R 2650 3800 50 
+F7 "KYPD_RW_1" O R 2650 4600 50 
+F8 "KYPD_RW_0" O R 2650 4400 50 
+$EndSheet
+Wire Wire Line
+	2650 4000 3300 4000
+Wire Wire Line
+	3300 4400 2650 4400
+Wire Wire Line
+	3300 4600 2650 4600
+Wire Wire Line
+	2650 4800 3300 4800
+Wire Wire Line
+	3300 5000 2650 5000
+$Sheet
+S 3300 2850 1300 2300
+U 607D96DE
+F0 "MCU" 50
+F1 "MCU.sch" 50
+F2 "KYPD_RW_0" I L 3300 4400 50 
+F3 "KYPD_RW_1" I L 3300 4600 50 
+F4 "KYPD_RW_2" I L 3300 4800 50 
+F5 "KYPD_RW_3" I L 3300 5000 50 
+F6 "KYPD_CL_0" I L 3300 3600 50 
+F7 "KYPD_CL_1" I L 3300 3800 50 
+F8 "KYPD_CL_2" I L 3300 4000 50 
+F9 "MTR_ON" O R 4600 3150 50 
+F10 "LIGHT_OUT" I L 3300 3150 50 
+$EndSheet
+Wire Wire Line
+	4600 3150 5250 3150
+Wire Wire Line
+	3300 3150 3000 3150
+Wire Wire Line
+	3000 3150 3000 2450
+Wire Wire Line
+	3000 2450 6900 2450
+Wire Wire Line
+	6900 2450 6900 3150
+Wire Wire Line
+	6900 3150 7200 3150
+$EndSCHEMATC
